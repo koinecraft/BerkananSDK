@@ -226,10 +226,6 @@ public enum BluetoothAuthorization: Int {
   
   case allowedAlways
   
-  @available(iOS, introduced: 7.0, deprecated: 13.0,
-  message: "Use CBManagerAuthorization instead")
-  @available(macCatalyst, introduced: 13.0, deprecated: 13.0,
-  message: "Use CBManagerAuthorization instead")
   public init?(
     cbPeripheralManagerAuthorizationStatus:
     CBPeripheralManagerAuthorizationStatus
@@ -237,7 +233,6 @@ public enum BluetoothAuthorization: Int {
     self.init(rawValue: cbPeripheralManagerAuthorizationStatus.rawValue)
   }
   
-  @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
   public init?(cbManagerAuthorization: CBManagerAuthorization) {
     self.init(rawValue: cbManagerAuthorization.rawValue)
   }
