@@ -1081,7 +1081,7 @@ extension BluetoothController: CBPeripheralDelegate {
           peripheral.identifier.description,
           peripheral.name ?? "",
           characteristic.description,
-          characteristic.service.description,
+          characteristic.service?.description ?? "nil",  // CHANGED: Added ?. and ?? "nil"
           error as CVarArg
         )
       }
@@ -1094,7 +1094,7 @@ extension BluetoothController: CBPeripheralDelegate {
           peripheral.identifier.description,
           peripheral.name ?? "",
           characteristic.description,
-          characteristic.service.description
+          characteristic.service?.description ?? "nil",  // CHANGED: Added ?. and ?? "nil"
         )
       }
     }
